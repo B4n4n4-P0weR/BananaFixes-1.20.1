@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": {
+      "item": "minecraft:glass_pane"
+    },
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "C": {
+      "item": "minecraft:red_wool"
+    }
+  },
+  "pattern": [
+    " A ",
+    "ABC",
+    " A "
+  ],
+  "result": {
+    "item": "banana_fixes:black_skkk"
+  },
+  "show_notification": true
+}

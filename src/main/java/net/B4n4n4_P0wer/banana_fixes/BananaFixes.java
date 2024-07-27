@@ -1,6 +1,7 @@
 package net.B4n4n4_P0wer.banana_fixes;
 
 import com.mojang.logging.LogUtils;
+import net.B4n4n4_P0wer.banana_fixes.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -28,6 +29,8 @@ public class BananaFixes {
     public BananaFixes() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -39,7 +42,9 @@ public class BananaFixes {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.BLACK_SKKK);
+        }
     }
 
     @SubscribeEvent
